@@ -100,6 +100,7 @@ class Sender {
     $body = Constants::$PARAM_REGISTRATION_ID . '=' . $registrationId . '&' .
       Constants::$PARAM_DELAY_WHILE_IDLE . '=' . ($message->getDelayWhileIdle ? '1' : '0') . '&' .
       Constants::$PARAM_TIME_TO_LIVE . '=' . $message->getTimeToLive();
+      Constants::$PARAM_DRY_RUN . '=' . $message->getDryRun();
 
     $collapseKey = $message->getCollapseKey();
     if($collapseKey != '')
@@ -256,6 +257,7 @@ class Sender {
 
     $request[Constants::$PARAM_TIME_TO_LIVE] = $message->getTimeToLive();
     $request[Constants::$PARAM_DELAY_WHILE_IDLE] = $message->getDelayWhileIdle();
+    $request[Constants::$PARAM_DRY_RUN] = $message->getDryRun();
     $request[Constants::$JSON_REGISTRATION_IDS] = $registrationIds;
 
     if(!is_null($message->getData()) && count($message->getData()) > 0)
