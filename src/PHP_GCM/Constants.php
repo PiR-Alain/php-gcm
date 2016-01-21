@@ -36,6 +36,11 @@ final class Constants {
    * Prefix to HTTP parameter used to set the message time-to-live.
    */
   public static $PARAM_TIME_TO_LIVE = 'time_to_live';
+  
+  /**
+   * Prefix to HTTP parameter used to set the message dry_run.
+   */
+  public static $PARAM_DRY_RUN = 'dry_run';
 
   /**
    * Too many messages sent by the sender. Retry after a while.
